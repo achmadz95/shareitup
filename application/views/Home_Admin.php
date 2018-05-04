@@ -157,7 +157,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               	<thead>
                     <th style="text-align: center;">No</th>
-                    <th style="text-align: center;">Nama</th>  
+                    <th style="text-align: center;">Nama</th>
+                    <th style="text-align: center;">Saldo</th> 
                     <th style="text-align: center;">Alamat</th>
                     <th style="text-align: center;">Kecamatan</th>
                     <th style="text-align: center;">No Telp</th>
@@ -174,6 +175,7 @@
                         
                     <td><?php echo $x['id_user']; ?></td>
                     <td><?php echo $x['nama_user']; ?></td>
+                    <td>Rp <?php echo number_format ($x['saldo'],2,',','.'); ?></td> <!-- Saldo di database -->
                     <td><?php echo $x['alamat']; ?></td>
                     <td><?php echo $x['kecamatan']; ?></td>
                     <td><?php echo $x['no_telp']; ?></td>

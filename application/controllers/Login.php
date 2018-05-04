@@ -37,6 +37,7 @@ class Login extends CI_Controller{
 	    	$this->session->set_userdata('id_user',$data['id_user']);
         	$this->session->set_userdata('nama_user',$data['nama_user']);
         	$this->session->set_userdata('username',$data['username']);
+        	$this->session->set_userdata('saldo',$data['saldo']);
         	$this->session->set_userdata('isAdmin',$data['isAdmin']);
 	    	//redirect('home');
 	    	if ($this->session->userdata('isAdmin')==TRUE) { // Halaman Admin
