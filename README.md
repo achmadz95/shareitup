@@ -1,14 +1,14 @@
 Share-It-Up
 # localhost/shareitup
 
-ADMIN
+# ADMIN
 Username : admin
 Password : admin
 
-USER 1
+# USER 1
 Username : achmadz 
 Password : zakaria
 
-USER 2
+# USER 2
 Username : supri
 Password : supri
