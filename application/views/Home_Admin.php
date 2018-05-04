@@ -164,6 +164,7 @@
                     <th style="text-align: center;">Kode Pos</th>
                     <th style="text-align: center;">Foto Profil</th>
                     <th style="text-align: center;">Foto KTP</th>
+                    <th style="text-align: center;">Foto KTM</th>
                     <th style="text-align: center;">Deskripsi</th>
                 </thead>
                     
@@ -179,6 +180,7 @@
                     <td><?php echo $x['kode_pos']; ?></td>
                     <td><a href="<?php echo base_url($x['foto_profil']); ?>"><img src="<?php echo base_url($x['foto_profil']); ?>" alt="" style="width: 180px;height:180px;" /></a></td>
                     <td><a href="<?php echo base_url($x['foto_ktp']); ?>"><img src="<?php echo base_url($x['foto_ktp']); ?>" alt="" style="width: 180px;height:180px;" /></a></td>
+                    <td><a href="<?php echo base_url($x['foto_ktm']); ?>"><img src="<?php echo base_url($x['foto_ktm']); ?>" alt="" style="width: 180px;height:180px;" /></a></td>
                     <td><?php echo $x['deskripsi']; ?></td>
 
                         
