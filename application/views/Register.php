@@ -116,8 +116,6 @@
 									<label for="no_telp" class="control-label" style="margin-left:27px;">Nomor HP</label>
 									<div class="controls">
 										<input name="no_telp" style="margin-left:27px;" type="number" placeholder="Enter your nomor telp" id="no_telp" class="input-xlarge" required>
-
-									
 								</div>
 
 								<div class="control-group">
@@ -127,6 +125,12 @@
 									</div>
 								</div>
 
+								<div class="control-group">
+									<label for="" class="control-label" style="margin-left:27px;">Foto KTM</label>
+									<div class="controls">
+										<input type="file" name="image3" style="margin-left:27px;">
+									</div>
+								</div>
 								
 							</fieldset>
 									

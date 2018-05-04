@@ -41,8 +41,11 @@
         $file1 = preg_replace('/\s+/', '_', $file1);
         $file2 = trim(addslashes('assets/img/'.$_FILES['image2']['name']));    /*FOTO KTP*/ 
         $file2 = preg_replace('/\s+/', '_', $file2);
+        $file3 = trim(addslashes('assets/img/'.$_FILES['image3']['name']));    /*FOTO KTM*/ 
+        $file3 = preg_replace('/\s+/', '_', $file3);
 
-        if ($this->upload->do_upload('image2') && $this->upload->do_upload('image')) {  /*JIKA UPLOAD FOTO_PROFIL DAN FOTO_KTP*/
+        // JIKA UPLOAD FOTO_PROFIL, FOTO_KTP DAN FOTO_KTM
+        if ($this->upload->do_upload('image2') && $this->upload->do_upload('image') && $this->upload->do_upload('image3')) {
           $data2 = array (
                'deskripsi'=> 'User',
                'username' => $username,
@@ -53,6 +56,7 @@
                'kecamatan'=> $kecamatan,
                'no_telp'=> $no_telp,
                'email'=> $email,
+               'foto_ktm' => $file3,
                'foto_ktp' => $file2,
                'foto_profil' => $file1
                );
@@ -60,7 +64,7 @@
           echo "<script>alert('Anda berhasil mendaftar') ; window.location.href = '../'</script>";
         }
         
-        else {                                                                        /*JIKA UPLOAD FOTO_KTP*/
+        else {                                                                        /*JIKA UPLOAD FOTO_KTP DAN FOTO_KTM*/
           $data1 = array (
                'deskripsi'=> 'User',
                'username' => $username,
@@ -71,6 +75,7 @@
                'kecamatan'=> $kecamatan,
                'email'=> $email,
                'no_telp'=> $no_telp,
+               'foto_ktm' => $file3,
                'foto_ktp' => $file2,
                'foto_profil' => $file1
                );
