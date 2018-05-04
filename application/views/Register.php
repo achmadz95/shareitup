@@ -197,16 +197,16 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="login">Login</a></li>  
-							<li><a href="register">Register</a></li>
-							<li><a href="login">Home</a></li>
-							<li><a href="login">Barang</a></li>							
+							<li><a href="<?php echo base_url(""); ?>">Login</a></li>  
+							<li><a href="">Register</a></li>
+							<li><a href="<?php echo base_url(""); ?>">Home</a></li>
+							<li><a href="<?php echo base_url(""); ?>">Barang</a></li>							
 						</ul>					
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="login">My Profile</a></li>
+							<li><a href="<?php echo base_url(""); ?>">My Profile</a></li>
 						</ul>
 					</div>
 					<div class="span5">
@@ -217,7 +217,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright ©Share-It-Up 2017</span>
+				<span>Copyright ©Share-It-Up 2018</span>
 			</section>
 		</div>
 		<script src="themes/js/common.js"></script>

@@ -217,7 +217,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright ©Share-It-Up 2017</small>
+          <small>Copyright ©Share-It-Up 2018</small>
         </div>
       </div>
     </footer>

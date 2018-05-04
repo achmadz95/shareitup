@@ -11,7 +11,9 @@
 		<link href=<?php echo base_url()."assets/bootstrap/css/bootstrap-responsive.min.css"?> rel="stylesheet">		
 		<link href=<?php echo base_url()."assets/themes/css/bootstrappage.css"?> rel="stylesheet"/>
 		
-		
+		<!-- logo icon -->
+		<link rel="icon" href="<?php echo base_url(); ?>assets/img/icon.png" type="image/png">
+
 		<!-- global styles -->
 		<link href=<?php echo base_url()."assets/themes/css/flexslider.css"?> rel="stylesheet">
 		<link href=<?php echo base_url()."assets/themes/css/main.css" ?> rel="stylesheet">
@@ -36,10 +38,16 @@
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
-						<ul class="user-menu">				
-							<li><b>Hi, <?php echo $this->session->userdata('nama_user'); ?></b></li>
-							<li><a style="padding: 3px 5px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a></li>		
+						<!-- Username dan Saldo-->
+						<ul class="user-menu">
+							<li><b style="margin-right: 0%;">Hi, <?php echo $this->session->userdata('nama_user'); ?></b></li>
+							<b>Saldo Anda : Rp. <?php echo number_format ($this->session->userdata['saldo'],2,',','.'); ?></b>
+							<li><a style="padding: 3px 5px; height: 22px" class="btn btn-inverse large" href="<?php echo site_url(''); ?>">Tambah Saldo</a></li>
 						</ul>
+						<!-- Tombol Logout -->
+						<div class="account pull-right">
+							<a style="padding: 3px 5px; margin-right: 14px; width: 93px; height: 22px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -153,16 +161,15 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="home">Login</a></li>  
-							<li><a href="home">Register</a></li>
-							<li><a href="home">Home</a></li>
-							<li><a href="kelola_barang">Barang</a></li>							
-						</ul>					
+							<li><a href="<?php echo base_url(""); ?>">Home</a></li>
+							<li><a href="<?php echo base_url("Profile"); ?>">Profil</a></li>
+							<li><a href="<?php echo base_url("Kelola_barang"); ?>">Barang</a></li>							
+						</ul>
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="profile">My Profile</a></li>
+							<li><a href="<?php echo base_url("Profile"); ?>">My Profile</a></li>
 						</ul>
 					</div>
 					<div class="span5">
@@ -173,7 +180,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright ©Share-It-Up 2017</span>
+				<span>Copyright ©Share-It-Up 2018</span>
 			</section>
 		</div>
 		<script src="themes/js/common.js"></script>		

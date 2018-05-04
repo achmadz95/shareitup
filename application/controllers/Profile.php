@@ -23,6 +23,10 @@ public function edit_profil(){
         $deskripsi = $_POST['deskripsi'];
         $no_telp = $_POST['no_telp'];
 		$kecamatan =  $_POST['kecamatan'];
+        $email =  $_POST['email'];
+        $username =  $_POST['username'];
+        $password =  $_POST['password'];
+        $sha1 = sha1($password);
         
 	 	$config['upload_path']         = './assets/img';
 		$config['allowed_types']        = 'gif|jpg|png';
@@ -41,13 +45,16 @@ public function edit_profil(){
 		
 		if(! $this->upload->do_upload('image')){
 
-        $data_update = array(
+        $data_update = array( /*Jika tidak upload foto profil*/
         	'nama_user' => $nama_user, 
         	'alamat' => $alamat , 
         	'kode_pos' =>$kodepos,
         	'no_telp' => $no_telp, 
-        	'kecamatan' =>$kecamatan, 
-        	'deskripsi'=>$deskripsi);
+        	'kecamatan' =>$kecamatan,
+            'email' =>$email,
+            'username' =>$username,
+            'password' =>$sha1, 
+        	'deskripsi'=>'User');
         
            	$this->Model_futsal->UpdateData('user',$data_update,'id_user ='.$id);
 
@@ -57,13 +64,16 @@ public function edit_profil(){
 
         $this->upload->do_upload('image');
 
-        $data_updates = array(
+        $data_updates = array( /*Jika upload foto profil*/
            	'nama_user' => $nama_user, 
         	'alamat' => $alamat , 
         	'kode_pos' =>$kodepos, 
-        	'deskripsi'=>$deskripsi,
+        	'deskripsi'=>'User',
         	'no_telp' => $no_telp, 
-        	'kecamatan' =>$kecamatan, 
+        	'kecamatan' =>$kecamatan,
+            'email' =>$email,
+            'username' =>$username,
+            'password' =>$sha1,
            	'foto_profil'=>$file1);
             
             $this->Model_futsal->UpdateData('user',$data_updates,'id_user ='.$id);

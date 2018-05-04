@@ -114,10 +114,9 @@
 					<div class="span7">					
 						<h4 class="title" style="margin-left:0px;"><span class="text">&nbsp&nbsp&nbsp&nbsp&nbspDon't have account?<strong>&nbspRegister</strong></span></h4>
 						
-						<form action="<?php echo base_url("Register");?>" >		
-								
-								<div style="margin-left:20px;"><button tabindex="9" class="btn btn-inverse large"  action="<?php echo base_url("Register"); ?>" >Create Your Own Account</button></div>
-							</form>					
+						<form action="<?php echo base_url("Register"); ?>" >
+							<div style="margin-left:20px;"><button tabindex="9" class="btn btn-inverse large"  action="<?php echo base_url("Register"); ?>" >Create Your Own Account</button></div>
+						</form>					
 					</div>				
 				</div>
 			</section>			
@@ -126,16 +125,16 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="login">Login</a></li>  
-							<li><a href="register">Register</a></li>
-							<li><a href="login">Home</a></li>
-							<li><a href="login">Barang</a></li>							
+							<li><a href="<?php echo base_url(""); ?>">Login</a></li>  
+							<li><a href="<?php echo base_url("Register?"); ?>">Register</a></li>
+							<li><a href="<?php echo base_url(""); ?>">Home</a></li>
+							<li><a href="<?php echo base_url(""); ?>">Barang</a></li>							
 						</ul>					
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="login">My Profile</a></li>
+							<li><a href="<?php echo base_url(""); ?>">My Profile</a></li>
 						</ul>
 					</div>
 					<div class="span5">
@@ -146,7 +145,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright ©Share-It-Up 2017</span>
+				<span>Copyright ©Share-It-Up 2018</span>
 			</section>
 		</div>
 		<script src="assets/themes/js/common.js"></script>

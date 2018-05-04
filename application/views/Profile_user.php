@@ -38,7 +38,7 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 						<li><b>Hi, <?php echo $this->session->userdata('nama_user'); ?></b></li>
-							<li><a style="padding: 3px 5px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a></li>		
+						<li><a style="padding: 3px 5px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a></li>		
 						</ul>
 					</div>
 				</div>
