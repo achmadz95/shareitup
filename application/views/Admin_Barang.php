@@ -16,6 +16,8 @@
   <link href=<?php echo base_url()."assets/admin/vendor/datatables/dataTables.bootstrap4.css"; ?> rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href=<?php echo base_url()."assets/admin/css/sb-admin.css"; ?> rel="stylesheet">
+  <!-- logo icon -->
+  <link rel="icon" href="<?php echo base_url(); ?>assets/img/icon.png" type="image/png">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
