@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2018 at 05:45 PM
+-- Generation Time: May 04, 2018 at 06:57 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -92,6 +92,7 @@ CREATE TABLE `user` (
   `foto_ktp` varchar(100) NOT NULL,
   `foto_ktm` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `saldo` int(255) NOT NULL,
   `deskripsi` varchar(200) NOT NULL,
   `username` varchar(15) NOT NULL,
   `password` varchar(40) NOT NULL,
@@ -102,10 +103,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `alamat`, `kecamatan`, `no_telp`, `kode_pos`, `foto_profil`, `foto_ktp`, `foto_ktm`, `email`, `deskripsi`, `username`, `password`, `isAdmin`) VALUES
-(1, 'admin', 'Wonorejo Selatan III no. 18', 'Rungkut', '087899998767', '60296', '', '', '', '6666666666', 'Admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
-(2, 'Zakaria Achmad', 'Jl.Hidrodinamika 2/3 Blok T-20', 'Sukolilo', '081567234577', '60111', 'assets/img/profil_zakaria.jpg', 'assets/img/ktp_zakaria.jpg', 'assets/img/foto_ktm.jpg', 'achmadz28@gmail.com', 'User', 'achmadz', '7654ae508ade5a9c01dbd566eca6b5a9d5e2135d', 0),
-(3, 'Andhika Supriyanto', 'Wisma Permai II no. 23', 'Mulyorejo', '083865432516', '60113', 'assets/img/profil_supri.jpg', 'assets/img/ktp_supri.jpg', 'assets/img/foto_ktm.jpg', 'pujichoirul3@gmail.com', 'User', 'supri', 'e404fb3a838a8c931b3ef40889cd0cd0b99b0db3', 0);
+INSERT INTO `user` (`id_user`, `nama_user`, `alamat`, `kecamatan`, `no_telp`, `kode_pos`, `foto_profil`, `foto_ktp`, `foto_ktm`, `email`, `saldo`, `deskripsi`, `username`, `password`, `isAdmin`) VALUES
+(1, 'admin', 'Wonorejo Selatan III no. 18', 'Rungkut', '087899998767', '60296', '', '', '', 'admin@shareitup.com', 0, 'Admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
+(2, 'Zakaria Achmad', 'Jl.Hidrodinamika 2/3 Blok T-20', 'Sukolilo', '081567234577', '60111', 'assets/img/profil_zakaria.jpg', 'assets/img/ktp_zakaria.jpg', 'assets/img/foto_ktm.jpg', 'achmadz28@gmail.com', 100000, 'User', 'achmadz', '7654ae508ade5a9c01dbd566eca6b5a9d5e2135d', 0),
+(3, 'Andhika Supriyanto', 'Wisma Permai II no. 23', 'Mulyorejo', '083865432516', '60113', 'assets/img/profil_supri.jpg', 'assets/img/ktp_supri.jpg', 'assets/img/foto_ktm.jpg', 'pujichoirul3@gmail.com', 50000, 'User', 'supri', 'e404fb3a838a8c931b3ef40889cd0cd0b99b0db3', 0);
 
 --
 -- Indexes for dumped tables
