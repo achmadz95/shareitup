@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 03:46 PM
+-- Generation Time: May 08, 2018 at 04:00 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -51,9 +51,7 @@ INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis`, `pinjam_dp_barang`, `
 (222983, 'Pompa Ban Mini IL983', 'Pompa Ban', 75000, 'assets/img/barang1-2.jpg', 'Berat asli produk: 90 Gram. Mampu memompa hingga tekanan 87 Psi / 6 Bar.', 0, 0, 2),
 (313839, 'OXONE Setrika Uap Berdiri OX-839 - Hitam', 'Setrika Baju', 50000, 'assets/img/barang3-1.jpg', 'Setrika uap untuk menyetrika baju dengan cepat', 0, 0, 3),
 (2131172, 'Philips Setrika Listrik HD1172  ', 'Setrika Baju', 10000, 'assets/img/barang2-1.jpg', 'Setrika listrik mudah dipakai dan dibawa berpergian', 0, 0, 2),
-(2223325, 'Pompa Injak Darurat KM3325', 'Pompa Ban', 60000, 'assets/img/barang1-2.jpg', 'Pompa Injak Darurat untuk sepeda, motor, dan mobil', 1, 0, 2),
-(3131301, 'Philips Setrika Travel HD1301 - Putih', 'Setrika Baju', 59000, 'assets/img/barang1-1.jpg', 'Setrika baju travel ini mudah dibawa ke mana-mana', 0, 0, 3),
-(3227745, 'Pompa Ban Mini Tekanan 100PSI 7745', 'Pompa Ban', 80000, 'assets/img/barang3-2.jpg', 'Tegangan : 12V DC\r\nTekanan : 100psi\r\nDaya : 130W\r\nDiameter Tabung : 30mm', 0, 0, 3);
+(2223325, 'Pompa Injak Darurat KM3325', 'Pompa Ban', 60000, 'assets/img/barang1-2.jpg', 'Pompa Injak Darurat untuk sepeda, motor, dan mobil', 1, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -74,21 +72,7 @@ CREATE TABLE `transaksi_barang` (
 
 INSERT INTO `transaksi_barang` (`id_peminjam`, `id_barangP`, `tgl_dipinjam`, `tgl_dikembalikan`) VALUES
 (2, 313839, '2017-12-01', '2017-12-05'),
-(3, 2223325, '2017-12-12', '2017-12-15'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3131301, '2018-05-08', '0000-00-00'),
-(2, 3227745, '2018-05-08', '0000-00-00');
+(3, 2223325, '2017-12-12', '2017-12-15');
 
 -- --------------------------------------------------------
 
