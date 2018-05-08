@@ -13,6 +13,8 @@
 		<link href=<?php echo base_url()."assets/bootstrap/css/bootstrap-responsive.min.css"?> rel="stylesheet">		
 		<link href=<?php echo base_url()."assets/themes/css/bootstrappage.css"?> rel="stylesheet"/>
 		
+		<!-- logo icon -->
+		<link rel="icon" href="<?php echo base_url(); ?>assets/img/icon.png" type="image/png">
 		
 		<!-- global styles -->
 		<link href=<?php echo base_url()."assets/themes/css/flexslider.css"?> rel="stylesheet">
@@ -40,12 +42,16 @@
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
-						<ul class="user-menu">				
-							<li><b>Hi, <?php echo $this->session->userdata('nama_user'); ?></b>		</li>	
-							
-								
-							<li><a style="padding: 3px 5px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a></li>			
+						<!-- Username dan Saldo-->
+						<ul class="user-menu">
+							<li><b style="margin-right: 0%;">Hi, <?php echo $this->session->userdata('nama_user'); ?></b></li>
+							<b>Saldo Anda : Rp. <?php echo number_format ($this->session->userdata['saldo'],2,',','.'); ?></b>
+							<li><a style="padding: 3px 5px; height: 22px" class="btn btn-inverse large" href="<?php echo site_url(''); ?>">Tambah Saldo</a></li>
 						</ul>
+						<!-- Tombol Logout -->
+						<div class="account pull-right">
+							<a style="padding: 3px 5px; margin-right: 14px; width: 93px; height: 22px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -117,10 +123,14 @@
 									<br/>
 									<label class="checkbox">
 										<p>Pilih tanggal pengembalian</p>
-									  <input type="date" value="" name="date"> 
+									  	<input type="date" value="" name="date">
 									</label>
 									<p>&nbsp;</p>
-									
+									<label class="checkbox">
+									  	<p>Harga DP Pinjam Barang</p>
+									  	<input type="number" value="<?php echo $x['pinjam_dp_barang']; ?>" name="dp" readonly> 
+									</label>
+									<p>&nbsp;</p>
 									<button class="btn btn-inverse" type="submit">Pinjam</button>
 								</form>
 							</div>	

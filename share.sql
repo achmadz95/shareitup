@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2018 at 09:42 PM
+-- Generation Time: May 08, 2018 at 03:46 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -32,6 +32,7 @@ CREATE TABLE `barang` (
   `id_barang` int(3) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `jenis` varchar(20) NOT NULL,
+  `pinjam_dp_barang` int(11) NOT NULL,
   `foto_barang` varchar(100) NOT NULL,
   `deskripsi_barang` varchar(200) NOT NULL,
   `dipinjam` tinyint(1) NOT NULL,
@@ -43,16 +44,16 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis`, `foto_barang`, `deskripsi_barang`, `dipinjam`, `dikembalikan`, `id_pemilik`) VALUES
-(2411, 'Canon EOS 600D', 'Kamera', 'assets/img/barang2-4.jpg', 'Canon EOS 600D salah satu keunggulannya ada fitur Full Hight Definiton Movies, dengan 9 titik Auto Focus yang dapat memudahkan penggunanya untuk menggambil gambar yang bagus.', 0, 0, 2),
-(3411, 'Sony Camera Cybershot DSC-W830', 'Kamera', 'assets/img/barang3-4.jpg', 'Camera Digital SONY DSC-W830 di lengkapi dengan resolusi 20.1MP, LCD 2,7\", ISO 3200, Intelligent auto, Optical Zoom 8x, Carl Seiss HD Movie (720p), Baterai Li-Ion.', 0, 0, 3),
-(24112, 'Paket Traveling GoPro HERO 6 Action Camera', 'Kamera', 'assets/img/barang1-4.jpg', 'Paket Traveling GoPro HERO 6 mampu mengeluarkan resolusi Ultra HD video 4K 60 fps, stabilizer yang sangat smooth, dan koneksi WiFi yang sangat cepat ke Gopro App.', 0, 0, 2),
-(222983, 'Pompa Ban Mini IL983', 'Pompa Ban', 'assets/img/barang1-2.jpg', 'Berat asli produk: 90 Gram. Mampu memompa hingga tekanan 87 Psi / 6 Bar.', 0, 0, 2),
-(313839, 'OXONE Setrika Uap Berdiri OX-839 - Hitam', 'Setrika Baju', 'assets/img/barang3-1.jpg', 'Setrika uap untuk menyetrika baju dengan cepat', 0, 0, 3),
-(2131172, 'Philips Setrika Listrik HD1172  ', 'Setrika Baju', 'assets/img/barang2-1.jpg', 'Setrika listrik mudah dipakai dan dibawa berpergian', 0, 0, 2),
-(2223325, 'Pompa Injak Darurat KM3325', 'Pompa Ban', 'assets/img/barang1-2.jpg', 'Pompa Injak Darurat untuk sepeda, motor, dan mobil', 1, 0, 2),
-(3131301, 'Philips Setrika Travel HD1301 - Putih', 'Setrika Baju', 'assets/img/barang1-1.jpg', 'Setrika baju travel ini mudah dibawa ke mana-mana', 0, 0, 3),
-(3227745, 'Pompa Ban Mini Tekanan 100PSI 7745', 'Pompa Ban', 'assets/img/barang3-2.jpg', 'Tegangan : 12V DC\r\nTekanan : 100psi\r\nDaya : 130W\r\nDiameter Tabung : 30mm', 0, 0, 3);
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis`, `pinjam_dp_barang`, `foto_barang`, `deskripsi_barang`, `dipinjam`, `dikembalikan`, `id_pemilik`) VALUES
+(2411, 'Canon EOS 600D', 'Kamera', 67500, 'assets/img/barang2-4.jpg', 'Canon EOS 600D salah satu keunggulannya ada fitur Full Hight Definiton Movies, dengan 9 titik Auto Focus yang dapat memudahkan penggunanya untuk menggambil gambar yang bagus.', 0, 0, 2),
+(3411, 'Sony Camera Cybershot DSC-W830', 'Kamera', 70000, 'assets/img/barang3-4.jpg', 'Camera Digital SONY DSC-W830 di lengkapi dengan resolusi 20.1MP, LCD 2,7\", ISO 3200, Intelligent auto, Optical Zoom 8x, Carl Seiss HD Movie (720p), Baterai Li-Ion.', 0, 0, 3),
+(24112, 'Paket Traveling GoPro HERO 6 Action Camera', 'Kamera', 125000, 'assets/img/barang1-4.jpg', 'Paket Traveling GoPro HERO 6 mampu mengeluarkan resolusi Ultra HD video 4K 60 fps, stabilizer yang sangat smooth, dan koneksi WiFi yang sangat cepat ke Gopro App.', 0, 0, 2),
+(222983, 'Pompa Ban Mini IL983', 'Pompa Ban', 75000, 'assets/img/barang1-2.jpg', 'Berat asli produk: 90 Gram. Mampu memompa hingga tekanan 87 Psi / 6 Bar.', 0, 0, 2),
+(313839, 'OXONE Setrika Uap Berdiri OX-839 - Hitam', 'Setrika Baju', 50000, 'assets/img/barang3-1.jpg', 'Setrika uap untuk menyetrika baju dengan cepat', 0, 0, 3),
+(2131172, 'Philips Setrika Listrik HD1172  ', 'Setrika Baju', 10000, 'assets/img/barang2-1.jpg', 'Setrika listrik mudah dipakai dan dibawa berpergian', 0, 0, 2),
+(2223325, 'Pompa Injak Darurat KM3325', 'Pompa Ban', 60000, 'assets/img/barang1-2.jpg', 'Pompa Injak Darurat untuk sepeda, motor, dan mobil', 1, 0, 2),
+(3131301, 'Philips Setrika Travel HD1301 - Putih', 'Setrika Baju', 59000, 'assets/img/barang1-1.jpg', 'Setrika baju travel ini mudah dibawa ke mana-mana', 0, 0, 3),
+(3227745, 'Pompa Ban Mini Tekanan 100PSI 7745', 'Pompa Ban', 80000, 'assets/img/barang3-2.jpg', 'Tegangan : 12V DC\r\nTekanan : 100psi\r\nDaya : 130W\r\nDiameter Tabung : 30mm', 0, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,21 @@ CREATE TABLE `transaksi_barang` (
 
 INSERT INTO `transaksi_barang` (`id_peminjam`, `id_barangP`, `tgl_dipinjam`, `tgl_dikembalikan`) VALUES
 (2, 313839, '2017-12-01', '2017-12-05'),
-(3, 2223325, '2017-12-12', '2017-12-15');
+(3, 2223325, '2017-12-12', '2017-12-15'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3131301, '2018-05-08', '0000-00-00'),
+(2, 3227745, '2018-05-08', '0000-00-00');
 
 -- --------------------------------------------------------
 
