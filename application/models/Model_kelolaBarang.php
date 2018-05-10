@@ -32,19 +32,10 @@ class Model_kelolaBarang extends CI_Model {
   			left join transaksi_barang on barang.id_barang=transaksi_barang.id_barangP
   			left join user on transaksi_barang.id_peminjam=user.id_user where id_pemilik='.$id_user);
   		return $data->result_array();
-  		// $this->db->select('*');
-   	// 	$this->db->from('barang');
-    // 	$this->db->join('user', 'user.id_user = barang.id_pemilik');
-    // 	$this->db->where('id_user ='.$id_user);
-
-    // 	$data = $this->db->get();
-    // 	return $data->result_array();
 
   	}
 
   	public function getBarangPinjam($id_user){
-
-  		// $id_user=$this->session->userdata('id_user');
 
   		$data=$this->db->query('select * from barang 
   			join transaksi_barang on barang.id_barang=transaksi_barang.id_barangP
@@ -115,35 +106,27 @@ class Model_kelolaBarang extends CI_Model {
 	}
 
 	function pinjamBarang($item){
-
 		$this->db->insert('transaksi_barang', $item );
-
 		$this->db->query('UPDATE barang SET dipinjam = 1 WHERE barang.id_barang = '.$item['id_barangP']);
-		// $this->db->update('barang', 'dipinjam=1', 'barang.id_barang',$item['id_barang']);
-
-		// $query = $this->db->select('*')
-  //                 ->from('barang')
-  //                 ->join('transaksi_barang', 'id_barang = '.$item)
-  //                 ->get();
-
-		// return $query;
-
 	}
 
 	function kembalikanBarang($item){
-
-		// $this->db->insert('transaksi_barang', $item );
 		$this->db->query('UPDATE barang SET dipinjam = 0 WHERE barang.id_barang = '.$item);
 		$this->db->query('UPDATE barang SET dikembalikan = 1 WHERE barang.id_barang = '.$item);
-
 	}
 	
 	function test($field , $search){
-			$query = $this->db->like($field, $search)->order_By('kelurahan')->get('barang');
-			return $query->result();
-		}
+		$query = $this->db->like($field, $search)->order_By('kelurahan')->get('barang');
+		return $query->result();
+	}
 
-
-
+	function update_pengguna_nosaldo($id,$nama,$jmlsaldo){
+		$hsl=$this->db->query("UPDATE user SET nama_user='$nama',saldo='$jmlsaldo' WHERE id_user='$id'");
+		return $hsl;
+	}
+	function update_pengguna($id,$nama,$saldoakhir){
+		$hsl=$this->db->query("UPDATE user SET nama_user='$nama',saldo='$saldoakhir' WHERE id_user='$id'");
+		return $hsl;
+	}
 }
 ?>

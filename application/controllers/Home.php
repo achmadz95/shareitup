@@ -15,18 +15,9 @@ class Home extends CI_Controller{
 		$this->load->model('Model_kelolaBarang');
 	}
 
-
-
 	public function index(){
-		//$data['results'] = $this->Model_futsal->login_user($username,$pass);
-        //$this->load->helper(array('form','url'));
         $data = $this->Model_kelolaBarang->tampilDepan();
-		$this->load->view('Home', array('data' => $data));	
-		// if($this->session->userdata('isAdmin')==FALSE)
-		// {
-		// 	redirect('Home');
-		// }else{
-		// 	redirect('login');}
+		$this->load->view('Home', array('data' => $data));
 	}
 	
 	public function cari(){
@@ -58,13 +49,33 @@ class Home extends CI_Controller{
 
         if (isset($filter) && !empty($search)) {
             $this->load->model('model_kelolaBarang');
-            $data['barang'] = $this->model_kelolaBarang->test($field, $search);
+            $data['barang'] = $this->Model_kelolaBarang->test($field, $search);
         } else {
             $this->load->model('model_kelolaBarang');
-            $data['barang'] = $this->model_kelolaBarang->test();
+            $data['barang'] = $this->Model_kelolaBarang->test();
         }
 
         $this->load->view('pencarian');
+	}
+
+	public function tambah_saldo(){
+		$id=$this->input->post('id');
+		$nama=$this->input->post('nama');
+		$jmlsaldo=$this->input->post('jmlsaldo');
+		$tambahsaldo=$this->input->post('tambahsaldo');
+		$saldoakhir = $jmlsaldo+$tambahsaldo;
+
+		if (empty($tambahsaldo)) {
+			$this->Model_kelolaBarang->update_pengguna_nosaldo($id,$nama,$jmlsaldo);
+			$this->session->set_userdata('saldo', $saldoakhir); // untuk update session saldo
+			echo $this->session->set_flashdata('msg','<label class="label label-success">Pengguna Berhasil diupdate</label>');
+			redirect('Home');
+		}else{
+			$this->Model_kelolaBarang->update_pengguna($id,$nama,$saldoakhir);
+			$this->session->set_userdata('saldo', $saldoakhir); // untuk update session saldo
+			echo $this->session->set_flashdata('msg','<label class="label label-success">Pengguna Berhasil diupdate</label>');
+			redirect('Home');
+		}
 	}
 	
 } ?>

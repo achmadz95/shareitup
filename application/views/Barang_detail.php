@@ -46,16 +46,56 @@
 						<ul class="user-menu">
 							<li><b style="margin-right: 0%;">Hi, <?php echo $this->session->userdata('nama_user'); ?></b></li>
 							<b>Saldo Anda : Rp. <?php echo number_format ($this->session->userdata['saldo'],2,',','.'); ?></b>
-							<li><a style="padding: 3px 5px; height: 22px" class="btn btn-inverse large" href="<?php echo site_url(''); ?>">Tambah Saldo</a></li>
+							<li><!-- Tombol untuk menampilkan modal profil-->
+								<button type="button" style="margin-right: -4px; width: 116px; height: 33px" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Tambah Saldo</button>
+							</li>
 						</ul>
 						<!-- Tombol Logout -->
 						<div class="account pull-right">
-							<a style="padding: 3px 5px; margin-right: 14px; width: 93px; height: 22px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a>
+							<a style="padding: 3px 5px; margin-right: 9px; width: 105px; height: 24px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a>
+						</div>
+					</div>
+				</div>
+				<!-- Modal -->
+					<div id="myModal2" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<!-- konten modal-->
+							<div class="modal-content">
+							<!-- heading modal -->
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Tambah Saldo</h4>
+							</div>
+							<!-- body modal -->
+							<form method="POST" action="<?php echo site_url()."Home/tambah_saldo/"; ?>" enctype='multipart/form-data'>
+								<div class="modal-body">
+									<div class="form-group">
+		  								<label for="id">ID :</label>
+		  								<textarea style="resize:none;width: 500px;" type="text" class="form-control" id="id" name="id" readonly><?php echo $this->session->userdata('id_user'); ?></textarea>
+									</div>
+									<div class="form-group">
+		  								<label for="nama">Nama Lengkap :</label>
+		  								<textarea style="resize:none;width: 500px;" type="text" class="form-control" id="nama" name="nama" readonly><?php echo $this->session->userdata('nama_user'); ?></textarea>
+									</div>
+									<div class="form-group"> 
+		  								<label for="jmlsaldo">Jumlah Saldo :</label>
+		  								<textarea style="resize:none;width: 500px;" type="text" class="form-control" id="jmlsaldo" name="jmlsaldo" readonly><?php echo $this->session->userdata('saldo'); ?> </textarea>
+									</div>
+									<div class="form-group"> 
+		  								<label for="saldo">Masukkan Jumlah Saldo :</label>
+		  								<textarea style="resize:none;width: 500px;" type="number" class="form-control" id="saldo" name="tambahsaldo" required=""></textarea>
+									</div>
+								</div>
+							<!-- footer modal -->
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-default">Simpan</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2018 at 10:08 AM
+-- Generation Time: May 10, 2018 at 11:25 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -104,8 +104,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `alamat`, `kecamatan`, `no_telp`, `kode_pos`, `foto_profil`, `foto_ktp`, `foto_ktm`, `email`, `saldo`, `deskripsi`, `username`, `password`, `isAdmin`) VALUES
 (1, 'admin', 'Wonorejo Selatan III no. 18', 'Rungkut', '087899998767', '60296', '', '', '', 'admin@shareitup.com', 0, 'Admin', 'admin', '90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad', 1),
-(2, 'Zakaria Achmad', 'Jl.Hidrodinamika 2/3 Blok T-20', 'Sukolilo', '081567234577', '60111', 'assets/img/profil_zakaria.jpg', 'assets/img/ktp_zakaria.jpg', 'assets/img/foto_ktm.jpg', 'achmadz28@gmail.com', 100000, 'User', 'achmadz', '1c1a88c1ae761ff2cd0ba1e517842f4e08ca89ca', 0),
-(3, 'Andhika Supriyanto', 'Wisma Permai II no. 23', 'Mulyorejo', '083865432516', '60113', 'assets/img/profil_supri.jpg', 'assets/img/ktp_supri.jpg', 'assets/img/foto_ktm.jpg', 'supridik@gmail.com', 50000, 'User', 'supri', 'f5762dfcdb4462a781d3db9b86f97d839c8e3095', 0);
+(2, 'Zakaria Achmad', 'Jl.Hidrodinamika 2/3 Blok T-20', 'Sukolilo', '081567234577', '60111', 'assets/img/profil_zakaria.jpg', 'assets/img/ktp_zakaria.jpg', 'assets/img/foto_ktm.jpg', 'achmadz28@gmail.com', 200000, 'User', 'achmadz', '1c1a88c1ae761ff2cd0ba1e517842f4e08ca89ca', 0),
+(3, 'Andhika Supriyanto', 'Wisma Permai II no. 23', 'Mulyorejo', '083865432516', '60113', 'assets/img/profil_supri.jpg', 'assets/img/ktp_supri.jpg', 'assets/img/foto_ktm.jpg', 'supridik@gmail.com', 150000, 'User', 'supri', 'f5762dfcdb4462a781d3db9b86f97d839c8e3095', 0);
 
 --
 -- Indexes for dumped tables
