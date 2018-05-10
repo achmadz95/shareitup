@@ -1,6 +1,6 @@
 # localhost/shareitup
-Share-It-Up
-Share-It-Up adalah aplikasi peminjaman barang untuk kalangan Mahasiswa ITS
+# Share-It-Up
+Share-It-Up adalah aplikasi peminjaman barang untuk kalangan Mahasiswa ITS. 
 Syarat peminjaman dengan membayar DP terlebih dahulu, untuk jaminan kepada pemilik barang.
 
 # ADMIN
