@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 04:00 PM
+-- Generation Time: May 10, 2018 at 10:08 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -94,7 +94,7 @@ CREATE TABLE `user` (
   `saldo` int(255) NOT NULL,
   `deskripsi` varchar(200) NOT NULL,
   `username` varchar(15) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `isAdmin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -103,9 +103,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `alamat`, `kecamatan`, `no_telp`, `kode_pos`, `foto_profil`, `foto_ktp`, `foto_ktm`, `email`, `saldo`, `deskripsi`, `username`, `password`, `isAdmin`) VALUES
-(1, 'admin', 'Wonorejo Selatan III no. 18', 'Rungkut', '087899998767', '60296', '', '', '', 'admin@shareitup.com', 0, 'Admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
-(2, 'Zakaria Achmad', 'Jl.Hidrodinamika 2/3 Blok T-20', 'Sukolilo', '081567234577', '60111', 'assets/img/profil_zakaria.jpg', 'assets/img/ktp_zakaria.jpg', 'assets/img/foto_ktm.jpg', 'achmadz28@gmail.com', 100000, 'User', 'achmadz', '7654ae508ade5a9c01dbd566eca6b5a9d5e2135d', 0),
-(3, 'Andhika Supriyanto', 'Wisma Permai II no. 23', 'Mulyorejo', '083865432516', '60113', 'assets/img/profil_supri.jpg', 'assets/img/ktp_supri.jpg', 'assets/img/foto_ktm.jpg', 'supridik@gmail.com', 50000, 'User', 'supri', 'e404fb3a838a8c931b3ef40889cd0cd0b99b0db3', 0);
+(1, 'admin', 'Wonorejo Selatan III no. 18', 'Rungkut', '087899998767', '60296', '', '', '', 'admin@shareitup.com', 0, 'Admin', 'admin', '90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad', 1),
+(2, 'Zakaria Achmad', 'Jl.Hidrodinamika 2/3 Blok T-20', 'Sukolilo', '081567234577', '60111', 'assets/img/profil_zakaria.jpg', 'assets/img/ktp_zakaria.jpg', 'assets/img/foto_ktm.jpg', 'achmadz28@gmail.com', 100000, 'User', 'achmadz', '1c1a88c1ae761ff2cd0ba1e517842f4e08ca89ca', 0),
+(3, 'Andhika Supriyanto', 'Wisma Permai II no. 23', 'Mulyorejo', '083865432516', '60113', 'assets/img/profil_supri.jpg', 'assets/img/ktp_supri.jpg', 'assets/img/foto_ktm.jpg', 'supridik@gmail.com', 50000, 'User', 'supri', 'f5762dfcdb4462a781d3db9b86f97d839c8e3095', 0);
 
 --
 -- Indexes for dumped tables
@@ -139,7 +139,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3227746;
+  MODIFY `id_barang` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2223326;
 
 --
 -- AUTO_INCREMENT for table `user`
