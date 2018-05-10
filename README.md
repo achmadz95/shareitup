@@ -1,7 +1,8 @@
 # localhost/shareitup
 # Share-It-Up
 Share-It-Up adalah aplikasi peminjaman barang untuk kalangan Mahasiswa ITS. 
-Syarat peminjaman dengan membayar DP terlebih dahulu, untuk jaminan kepada pemilik barang.
+ Syarat untuk peminjaman barang dengan membayar DP terlebih dahulu, untuk jaminan kepada pemilik barang.
+ Untuk tambah saldonya masih manual, kedepannya mungkin bisa dikembangkan dengan bekerja sama alfamart,indomaret,dll.
 
 # ADMIN
 Username : admin
