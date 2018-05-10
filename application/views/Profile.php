@@ -55,7 +55,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="index.html" class="logo pull-left"><img src="<?php echo base_url('assets/img/logo.png'); ?>" class="site_logo" alt="" style="width: 11%; height: 100%; margin-left:-10px;" ></a>
+					<a href=<?php echo base_url().""?> class="logo pull-left"><img src="<?php echo base_url('assets/img/logo.png'); ?>" class="site_logo" alt="" style="width: 11%; height: 100%; margin-left:-10px;" ></a>
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="<?php echo base_url("Home")?>">Home</a>					

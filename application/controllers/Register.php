@@ -20,8 +20,9 @@
 		//if ($this->form_validation->run()) {
         $username = $this->input->post('username');
       	$password  = $this->input->post('password');
-      	$sha1 = sha1($password);
-      	$nama = $this->input->post('nama');
+      	$md5 = md5($password);
+        $sha1 = sha1($md5);
+        $nama = $this->input->post('nama');
       	$kodepos = $this->input->post('kodepos');
       	$alamat = $this->input->post('alamat');
       	$kecamatan = $this->input->post('kecamatan');

@@ -26,9 +26,13 @@ class Login extends CI_Controller{
 	}
 
 	public function aksi_login(){ // Controller Login
+		$password  = $this->input->post('password');
+      	$md5 = md5($password);
+        $sha1 = sha1($md5);
+
 		$user_login=array(
 			'username'=>$this->input->post('username'),
-			'password'=>sha1($this->input->post('password'))
+			'password'=>$sha1
  		);
 		
 		$data=$this->Model_futsal->login_user($user_login['username'],$user_login['password']);

@@ -37,7 +37,7 @@
 				<div class="span4">
 					<form method="POST" action="<?php echo base_url().'Home/cari'?>">
 
-						<input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
+						<input type="text" class="input-block-level search-query" Placeholder="eg. Nama / Jenis Barang">
 					</form>
 				</div>
 				<div class="span8">
@@ -82,21 +82,7 @@
 					<div class="span9">
 						<div class="row">
 							<div class="span4">
-								<a href="<?php echo base_url().$x['foto_barang'] ?>" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="<?php echo base_url().$x['foto_barang'] ?>"></a>												
-								<!-- <ul class="thumbnails small">								
-									<li class="span1">
-										<a href="themes/images/ladies/2.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 2"><img src="themes/images/ladies/2.jpg" alt=""></a>
-									</li>								
-									<li class="span1">
-										<a href="themes/images/ladies/3.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 3"><img src="themes/images/ladies/3.jpg" alt=""></a>
-									</li>													
-									<li class="span1">
-										<a href="themes/images/ladies/4.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 4"><img src="themes/images/ladies/4.jpg" alt=""></a>
-									</li>
-									<li class="span1">
-										<a href="themes/images/ladies/5.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 5"><img src="themes/images/ladies/5.jpg" alt=""></a>
-									</li>
-								</ul> -->
+								<a href="<?php echo base_url().$x['foto_barang'] ?>" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="<?php echo base_url().$x['foto_barang'] ?>"></a>	
 							</div>
 							
 							<div class="span5">
@@ -104,7 +90,6 @@
 									<strong>Nama Barang:</strong> <span><?php echo $x['nama_barang']; ?></span><br>
 									<strong>Jenis:</strong> <span><?php echo $x['jenis']; ?></span><br>
 									<strong>Pemilik:</strong> <span><a href="<?php echo base_url('Profile/profil_user?id_user=').$x['id_pemilik']; ?>"><?php echo $x['nama_user']; ?></a></span><br>
-									<!-- <strong>Deskripsi:</strong> <span><?php echo $x['deskripsi_barang']; ?></span><br> -->
 														
 								</address>									
 								
@@ -162,161 +147,38 @@
 									</div>
 								</div>							
 							</div>						
-							<div class="span9">	
-								<br>
-								<h4 class="title">
-									<span class="pull-left"><span class="text"><strong>Related</strong> Products</span></span>
-									<span class="pull-right">
-										<a class="left button" href="#myCarousel-1" data-slide="prev"></a><a class="right button" href="#myCarousel-1" data-slide="next"></a>
-									</span>
-								</h4>
-								<div id="myCarousel-1" class="carousel slide">
-									<div class="carousel-inner">
-										<div class="active item">
-											<ul class="thumbnails listing-products">
-												<li class="span3">
-													<div class="product-box">
-														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="themes/images/ladies/6.jpg"></a><br/>
-														<a href="product_detail.html" class="title">Wuam ultrices rutrum</a><br/>
-														<a href="#" class="category">Suspendisse aliquet</a>
-														<p class="price">$341</p>
-													</div>
-												</li>
-												<li class="span3">
-													<div class="product-box">
-														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="themes/images/ladies/5.jpg"></a><br/>
-														<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
-														<a href="#" class="category">Phasellus consequat</a>
-														<p class="price">$341</p>
-													</div>
-												</li>       
-												<li class="span3">
-													<div class="product-box">												
-														<a href="product_detail.html"><img alt="" src="themes/images/ladies/4.jpg"></a><br/>
-														<a href="product_detail.html" class="title">Praesent tempor sem</a><br/>
-														<a href="#" class="category">Erat gravida</a>
-														<p class="price">$28</p>
-													</div>
-												</li>												
-											</ul>
-										</div>
-										<div class="item">
-											<ul class="thumbnails listing-products">
-												<li class="span3">
-													<div class="product-box">
-														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="themes/images/ladies/1.jpg"></a><br/>
-														<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
-														<a href="#" class="category">Phasellus consequat</a>
-														<p class="price">$341</p>
-													</div>
-												</li>       
-												<li class="span3">
-													<div class="product-box">												
-														<a href="product_detail.html"><img alt="" src="themes/images/ladies/2.jpg"></a><br/>
-														<a href="product_detail.html">Praesent tempor sem</a><br/>
-														<a href="#" class="category">Erat gravida</a>
-														<p class="price">$28</p>
-													</div>
-												</li>
-												<li class="span3">
-													<div class="product-box">
-														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="themes/images/ladies/3.jpg"></a><br/>
-														<a href="product_detail.html" class="title">Wuam ultrices rutrum</a><br/>
-														<a href="#" class="category">Suspendisse aliquet</a>
-														<p class="price">$341</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 					</div>
-					<div class="span3 col">
-						<div class="block">	
-							<ul class="nav nav-list">
-								<li class="nav-header">SUB CATEGORIES</li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li class="active"><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
-							</ul>
-							<br/>
-							<ul class="nav nav-list below">
-								<li class="nav-header">MANUFACTURES</li>
-								<li><a href="products.html">Adidas</a></li>
-								<li><a href="products.html">Nike</a></li>
-								<li><a href="products.html">Dunlop</a></li>
-								<li><a href="products.html">Yamaha</a></li>
-							</ul>
-						</div>
-						<div class="block">
-							<h4 class="title">
-								<span class="pull-left"><span class="text">Randomize</span></span>
-								<span class="pull-right">
-									<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
-								</span>
-							</h4>
-							<div id="myCarousel" class="carousel slide">
-								<div class="carousel-inner">
-									<div class="active item">
-										<ul class="thumbnails listing-products">
-											<li class="span3">
-												<div class="product-box">
-													<span class="sale_tag"></span>												
-													<a href="product_detail.html"><img alt="" src="themes/images/ladies/7.jpg"></a><br/>
-													<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
-													<a href="#" class="category">Suspendisse aliquet</a>
-													<p class="price">$261</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="item">
-										<ul class="thumbnails listing-products">
-											<li class="span3">
-												<div class="product-box">												
-													<a href="product_detail.html"><img alt="" src="themes/images/ladies/8.jpg"></a><br/>
-													<a href="product_detail.html" class="title">Tempor sem sodales</a><br/>
-													<a href="#" class="category">Urna nec lectus mollis</a>
-													<p class="price">$134</p>
-												</div>
-											</li>
-										</ul>
-									</div>
+
+					<div class="row feature_box">				
+						<div class="span4">
+							<div class="service">
+								<div class="responsive" style="margin-top: 70px">	
+									<img src="assets/themes/images/feature_img_2.png" alt="" />
+									<h4>MODERN <strong>DESIGN</strong></h4>
+									<p>Share It Up ini menggunakan design modern.</p>									
 								</div>
 							</div>
 						</div>
-						<div class="block">								
-							<h4 class="title"><strong>Best</strong> Seller</h4>								
-							<ul class="small-product">
-								<li>
-									<a href="#" title="Praesent tempor sem sodales">
-										<img src="themes/images/ladies/1.jpg" alt="Praesent tempor sem sodales">
-									</a>
-									<a href="#">Praesent tempor sem</a>
-								</li>
-								<li>
-									<a href="#" title="Luctus quam ultrices rutrum">
-										<img src="themes/images/ladies/2.jpg" alt="Luctus quam ultrices rutrum">
-									</a>
-									<a href="#">Luctus quam ultrices rutrum</a>
-								</li>
-								<li>
-									<a href="#" title="Fusce id molestie massa">
-										<img src="themes/images/ladies/3.jpg" alt="Fusce id molestie massa">
-									</a>
-									<a href="#">Fusce id molestie massa</a>
-								</li>   
-							</ul>
+						<div class="span4">	
+							<div class="service">
+								<div class="customize" style="margin-top: 70px">			
+									<img src="assets/themes/images/feature_img_1.png" alt="" />
+									<h4>FREE <strong>SHIPPING</strong></h4>
+									<p>Share It Up ini mudah digunakan. Hanya pilih Barang yang ingin kamu pinjam dan klik pinjam!</p>
+								</div>
+							</div>
 						</div>
+						<div class="span4">
+							<div class="service">
+								<div class="support" style="margin-top: 70px">	
+									<img src="assets/themes/images/feature_img_3.png" alt="" />
+									<h4>24/7 LIVE <strong>SUPPORT</strong></h4>
+									<p>Share It Up ini live support selama 24jam.</p>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</section>			
@@ -342,8 +204,8 @@
 						</ul>
 					</div>
 					<div class="span5">
-						<p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
+						<p class="logo"><img src="assets/img/logo2.png" style="margin-left:-11px;" class="site_logo" alt=""></p>
+						<p>Share It Up ini menggunakan design modern.<br> Share It Up ini mudah digunakan. Hanya pilih Barang yang ingin kamu pinjam dan klik pinjam!<br> Share It Up ini live support selama 24jam.</p>
 						<br/>
 						<span class="social_icons">
 							<a class="facebook" href="#">Facebook</a>
@@ -355,7 +217,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright ©Share-It-Up 2017</span>
+				<span>Copyright ©Share-It-Up 2018</span>
 			</section>
 		</div>
 		<script src="themes/js/common.js"></script>
