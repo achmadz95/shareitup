@@ -41,14 +41,6 @@ class Barang_detail extends CI_Controller{
 
 		echo "<script>alert('Barang berhasil di booking') ; window.location.href = '../'</script>";
 
-		// if ($this->session->has_userdata('saldo'))
-		// {
-  //  			$this->session->unset_userdata('saldo');
-  //  			number_format ($this->session->userdata['saldo'],2,',','.');
-		// }
-
-    	// 'foto_profil' => $file1
-    	// 'foto_ktp' => $file2
 	}
 
 }
