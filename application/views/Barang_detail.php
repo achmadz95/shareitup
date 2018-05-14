@@ -44,52 +44,19 @@
 					<div class="account pull-right">
 						<!-- Username dan Saldo-->
 						<ul class="user-menu">
-							<li><b style="margin-right: 0%;">Hi, <?php echo $this->session->userdata('nama_user'); ?></b></li>
-							<b>Saldo Anda : Rp. <?php echo number_format ($this->session->userdata['saldo'],2,',','.'); ?></b>
-							<li><!-- Tombol untuk menampilkan modal profil-->
-								<button type="button" style="margin-right: -4px; width: 116px; height: 33px" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Tambah Saldo</button>
+							<li>
+								<b style="margin-right: 0%;">Hi, <?php echo $this->session->userdata('nama_user'); ?></b>
+							</li>
+							<b>
+								Saldo Anda : Rp. <?php echo number_format ($this->session->userdata['saldo'],2,',','.'); ?>
+							</b>
+							<li>
+								<a style="padding: 3px 5px; margin-right: -4px; width: 105px; height: 24px" class="btn btn-info btn-lg" href="<?php echo site_url('Home'); ?>">Tambah Saldo</a>
 							</li>
 						</ul>
 						<!-- Tombol Logout -->
 						<div class="account pull-right">
 							<a style="padding: 3px 5px; margin-right: 9px; width: 105px; height: 24px;" class="btn btn-inverse large" href="<?php echo site_url('Logout'); ?>">Logout</a>
-						</div>
-					</div>
-				</div>
-				<!-- Modal -->
-					<div id="myModal2" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-							<!-- konten modal-->
-							<div class="modal-content">
-							<!-- heading modal -->
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Tambah Saldo</h4>
-							</div>
-							<!-- body modal -->
-							<form method="POST" action="<?php echo site_url()."Home/tambah_saldo/"; ?>" enctype='multipart/form-data'>
-								<div class="modal-body">
-									<div class="form-group">
-		  								<label for="id">ID :</label>
-		  								<textarea style="resize:none;width: 500px;" type="text" class="form-control" id="id" name="id" readonly><?php echo $this->session->userdata('id_user'); ?></textarea>
-									</div>
-									<div class="form-group">
-		  								<label for="nama">Nama Lengkap :</label>
-		  								<textarea style="resize:none;width: 500px;" type="text" class="form-control" id="nama" name="nama" readonly><?php echo $this->session->userdata('nama_user'); ?></textarea>
-									</div>
-									<div class="form-group"> 
-		  								<label for="jmlsaldo">Jumlah Saldo :</label>
-		  								<textarea style="resize:none;width: 500px;" type="text" class="form-control" id="jmlsaldo" name="jmlsaldo" readonly><?php echo $this->session->userdata('saldo'); ?> </textarea>
-									</div>
-									<div class="form-group"> 
-		  								<label for="saldo">Masukkan Jumlah Saldo :</label>
-		  								<textarea style="resize:none;width: 500px;" type="number" class="form-control" id="saldo" name="tambahsaldo" required=""></textarea>
-									</div>
-								</div>
-							<!-- footer modal -->
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-default">Simpan</button>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -143,20 +110,17 @@
 							<div class="span5">
 								<form class="form-inline" action="<?php echo base_url('Barang_detail/pinjam_barang'); ?>" method="post" enctype='multipart/form-data'>
 									<label class="checkbox">
-										<input type="hidden" value="<?php echo $x['id_barang']; ?>" name='id_barang'> 
+										<input type="hidden" value="<?php echo $x['id_barang']; ?>" name='id_barang'>
+										<p>Pilih tanggal pengembalian</p>
+									  	<input type="date" value="" name="date"> 
+									  	<p>Harga DP Pinjam Barang</p>
+									  	<input type="number" value="<?php echo $x['pinjam_dp_barang']; ?>" name="dp" readonly>  
+									  	<p>&nbsp;</p>
+									  	<button class="btn btn-inverse" type="submit">Pinjam</button>
 									</label>
 									<br/>
-									<label class="checkbox">
-										<p>Pilih tanggal pengembalian</p>
-									  	<input type="date" value="" name="date">
-									</label>
-									<p>&nbsp;</p>
-									<label class="checkbox">
-									  	<p>Harga DP Pinjam Barang</p>
-									  	<input type="number" value="<?php echo $x['pinjam_dp_barang']; ?>" name="dp" readonly> 
-									</label>
-									<p>&nbsp;</p>
-									<button class="btn btn-inverse" type="submit">Pinjam</button>
+									
+									
 								</form>
 							</div>	
 							<?php } } ?>		

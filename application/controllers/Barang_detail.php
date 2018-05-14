@@ -12,8 +12,7 @@ class Barang_detail extends CI_Controller{
 	public function index(){
 		$item=$this->input->get('id_barang');
 		$data = $this->Model_kelolaBarang->getDetailBarang($item);
-		$this->load->view('Barang_detail'
-		, array('data' => $data)
+		$this->load->view('Barang_detail', array('data' => $data)
 		);	
 	}
 
