@@ -50,11 +50,14 @@ class Login extends CI_Controller{
 			else if ($this->session->userdata('isAdmin')==FALSE) { // Halaman User
 				redirect('Home');
 			}
-	    	//$this->load->view('Home');
-        }	else{
+			// else {
+			// 	$this->load->view('Login');
+			// }
+	    
+        }else{
                 	$message = "Username / Password salah";
-					echo "<script type='text/javascript'>alert('$message');window.location.href='".site_url('Login')."';</script>";
-	  		//$this->load->view('Home');
+					// echo "<script type='text/javascript'>alert('$message');window.location.href='".site_url('Login')."';</script>";
+	  				redirect('Login');
 		}
 	}
 

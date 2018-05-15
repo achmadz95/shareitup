@@ -6,25 +6,35 @@ class Login_test extends TestCase {
     public function test_index()
 	{
 		$output = $this->request('GET', 'Login');
-		$this->assertContains('<title>Futsal.in : Log In</title>', $output); 
+		$this->assertContains('<title>Share-it-up! : Login Page</title>', $output); 
 	}
 
-        public function test_aksi_login() //user benar password benar
+        public function test_aksi_login() //user benar password benar (ADMIN)
     {    
         $output = $this->request('POST', 'Login/aksi_login', 
-					['username' => 'umar',
-					 'password' => 'siapmaju'
+					['username' => 'admin',
+					 'password' => 'admin'
 					 ]);
-        $this->assertEquals('umar', $_SESSION['username'], $output);
-        $this->assertRedirect('Login/authenticate');
+        $this->assertEquals('admin', $_SESSION['username'], $output);
+        $this->assertRedirect('Home_admin');
     }
     
-    public function test_aksi_login_bukanuser() //user salah password salah
+    public function test_aksi_loginUser() //user benar password benar (USER)
+    {    
+        $output = $this->request('POST', 'Login/aksi_login', 
+					['username' => 'achmadz',
+					 'password' => 'zakaria'
+					 ]);
+        $this->assertEquals('achmadz', $_SESSION['username'], $output);
+        $this->assertRedirect('Home');
+    }
+    
+    public function test_aksi_login_bukanuser() //user salah password salah (ADMIN)
     {
         $output = $this->request('POST', 'Login/aksi_login',
                 [
-                    'username' => 'salah ini',
-                    'password' => 'passnya salah',
+                    'username' => 'admin1',
+                    'password' => 'admin123',
                 ]);
         
         $this->assertFalse(isset($_SESSION['username'], $output));
@@ -35,7 +45,7 @@ class Login_test extends TestCase {
     {
         $output = $this->request('POST', 'Login/aksi_login',
                 [
-                    'username' => 'umar',
+                    'username' => 'admin',
                     'password' => 'passnya salah',
                 ]);
         
@@ -48,7 +58,7 @@ class Login_test extends TestCase {
         $output = $this->request('POST', 'Login/aksi_login',
                 [
                     'username' => 'usernyasalah',
-                    'password' => 'siapmaju',
+                    'password' => 'zakaria',
                 ]);
         
         $this->assertFalse(isset($_SESSION['username'], $output));
@@ -68,11 +78,11 @@ class Login_test extends TestCase {
         $this->assertRedirect('Login');
     }
 	
-	public function test_aksi_login_userisibenar(){ //user diii benar passwd kosong
+	public function test_aksi_login_userisibenar(){ //user diisi benar passwd kosong
 
         $this->request('POST', 'Login/aksi_login',
                 [
-                    'username' => 'umar',
+                    'username' => 'achmadz',
                     'password' => '',
                 ]);
 
@@ -85,7 +95,7 @@ class Login_test extends TestCase {
 
         $this->request('POST', 'Login/aksi_login',
                 [
-                    'username' => 'umar1234',
+                    'username' => 'adchmadz1234',
                     'password' => '',
                 ]);
 
@@ -99,7 +109,7 @@ class Login_test extends TestCase {
         $this->request('POST', 'Login/aksi_login',
                 [
                     'username' => '',
-                    'password' => 'siapmaju',
+                    'password' => 'zakaria',
                 ]);
 
 
@@ -112,32 +122,12 @@ class Login_test extends TestCase {
         $this->request('POST', 'Login/aksi_login',
                 [
                     'username' => '',
-                    'password' => 'siapmajujujujujutu',
+                    'password' => 'zakariaaa',
                 ]);
 
 
         $this->assertFalse(isset($_SESSION['username']));
         $this->assertRedirect('Login');
     }
-	
-	public function test_authenticate_ada_session()
-		{
-       $_SESSION['id_user'] = "1";
-       $_SESSION['username'] = "umar";
-        $this->request('GET','Login/aksi_login');
-        $this->request('GET', 'Login/authenticate');
-        
-        $this->assertTrue( isset($_SESSION['username']) );
-        $this->assertRedirect('Home'); 
-		}
-
-    public function test_authenticate_no_session()
-        {
-        $this->request('GET','Login/aksi_login');    
-        $this->request('GET', 'Login/authenticate');
-        
-        $this->assertFalse( isset($_SESSION['username']) );
-        $this->assertRedirect('Login'); 
-        }
   
 }
