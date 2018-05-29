@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2018 at 11:25 AM
+-- Generation Time: May 30, 2018 at 12:28 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -34,6 +34,8 @@ CREATE TABLE `barang` (
   `jenis` varchar(20) NOT NULL,
   `pinjam_dp_barang` int(11) NOT NULL,
   `foto_barang` varchar(100) NOT NULL,
+  `foto_barang2` varchar(100) DEFAULT NULL,
+  `foto_barang3` varchar(100) DEFAULT NULL,
   `deskripsi_barang` varchar(200) NOT NULL,
   `dipinjam` tinyint(1) NOT NULL,
   `dikembalikan` tinyint(1) NOT NULL,
@@ -44,14 +46,14 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis`, `pinjam_dp_barang`, `foto_barang`, `deskripsi_barang`, `dipinjam`, `dikembalikan`, `id_pemilik`) VALUES
-(2411, 'Canon EOS 600D', 'Kamera', 67500, 'assets/img/barang2-4.jpg', 'Canon EOS 600D salah satu keunggulannya ada fitur Full Hight Definiton Movies, dengan 9 titik Auto Focus yang dapat memudahkan penggunanya untuk menggambil gambar yang bagus.', 0, 0, 2),
-(3411, 'Sony Camera Cybershot DSC-W830', 'Kamera', 70000, 'assets/img/barang3-4.jpg', 'Camera Digital SONY DSC-W830 di lengkapi dengan resolusi 20.1MP, LCD 2,7\", ISO 3200, Intelligent auto, Optical Zoom 8x, Carl Seiss HD Movie (720p), Baterai Li-Ion.', 0, 0, 3),
-(24112, 'Paket Traveling GoPro HERO 6 Action Camera', 'Kamera', 125000, 'assets/img/barang1-4.jpg', 'Paket Traveling GoPro HERO 6 mampu mengeluarkan resolusi Ultra HD video 4K 60 fps, stabilizer yang sangat smooth, dan koneksi WiFi yang sangat cepat ke Gopro App.', 0, 0, 2),
-(222983, 'Pompa Ban Mini IL983', 'Pompa Ban', 75000, 'assets/img/barang1-2.jpg', 'Berat asli produk: 90 Gram. Mampu memompa hingga tekanan 87 Psi / 6 Bar.', 0, 0, 2),
-(313839, 'OXONE Setrika Uap Berdiri OX-839 - Hitam', 'Setrika Baju', 50000, 'assets/img/barang3-1.jpg', 'Setrika uap untuk menyetrika baju dengan cepat', 0, 0, 3),
-(2131172, 'Philips Setrika Listrik HD1172  ', 'Setrika Baju', 10000, 'assets/img/barang2-1.jpg', 'Setrika listrik mudah dipakai dan dibawa berpergian', 0, 0, 2),
-(2223325, 'Pompa Injak Darurat KM3325', 'Pompa Ban', 60000, 'assets/img/barang1-2.jpg', 'Pompa Injak Darurat untuk sepeda, motor, dan mobil', 1, 0, 2);
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis`, `pinjam_dp_barang`, `foto_barang`, `foto_barang2`, `foto_barang3`, `deskripsi_barang`, `dipinjam`, `dikembalikan`, `id_pemilik`) VALUES
+(2411, 'Canon EOS 600D', 'Kamera', 67500, 'assets/img/barang2-4.jpg', NULL, NULL, 'Canon EOS 600D salah satu keunggulannya ada fitur Full Hight Definiton Movies, dengan 9 titik Auto Focus yang dapat memudahkan penggunanya untuk menggambil gambar yang bagus.', 0, 0, 2),
+(3411, 'Sony Camera Cybershot DSC-W830', 'Kamera', 70000, 'assets/img/barang3-4.jpg', NULL, NULL, 'Camera Digital SONY DSC-W830 di lengkapi dengan resolusi 20.1MP, LCD 2,7\", ISO 3200, Intelligent auto, Optical Zoom 8x, Carl Seiss HD Movie (720p), Baterai Li-Ion.', 0, 0, 3),
+(24112, 'Paket Traveling GoPro HERO 6 Action Camera', 'Kamera', 125000, 'assets/img/barang1-4.jpg', NULL, NULL, 'Paket Traveling GoPro HERO 6 mampu mengeluarkan resolusi Ultra HD video 4K 60 fps, stabilizer yang sangat smooth, dan koneksi WiFi yang sangat cepat ke Gopro App.', 0, 0, 2),
+(222983, 'Pompa Ban Mini IL983', 'Pompa Ban', 75000, 'assets/img/barang1-2.jpg', NULL, NULL, 'Berat asli produk: 90 Gram. Mampu memompa hingga tekanan 87 Psi / 6 Bar.', 0, 0, 2),
+(313839, 'OXONE Setrika Uap Berdiri OX-839 - Hitam', 'Setrika Baju', 50000, 'assets/img/barang3-1.jpg', 'assets/img/setrika3.jpg', 'assets/img/setrika4.jpg', 'Setrika uap untuk menyetrika baju dengan cepat', 0, 0, 3),
+(2131172, 'Philips Setrika Listrik HD1172  ', 'Setrika Baju', 10000, 'assets/img/barang2-1.jpg', NULL, NULL, 'Setrika listrik mudah dipakai dan dibawa berpergian', 0, 0, 2),
+(2223325, 'Pompa Injak Darurat KM3325', 'Pompa Ban', 60000, 'assets/img/barang1-2.jpg', NULL, NULL, 'Pompa Injak Darurat untuk sepeda, motor, dan mobil', 1, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,19 @@ CREATE TABLE `transaksi_barang` (
 
 INSERT INTO `transaksi_barang` (`id_peminjam`, `id_barangP`, `tgl_dipinjam`, `tgl_dikembalikan`) VALUES
 (2, 313839, '2017-12-01', '2017-12-05'),
-(3, 2223325, '2017-12-12', '2017-12-15');
+(3, 2223325, '2017-12-12', '2017-12-15'),
+(2, 313839, '2018-05-14', '2018-05-15'),
+(2, 313839, '2018-05-14', '2018-05-31'),
+(2, 313839, '2018-05-14', '2018-05-15'),
+(2, 313839, '2018-05-14', '2018-05-15'),
+(2, 313839, '2018-05-14', '2018-05-16'),
+(2, 313839, '2018-05-14', '2018-05-17'),
+(2, 313839, '2018-05-14', '2018-05-15'),
+(2, 313839, '2018-05-14', '2018-05-23'),
+(2, 313839, '2018-05-14', '2018-05-15'),
+(2, 313839, '2018-05-15', '0000-00-00'),
+(2, 313839, '2018-05-29', '0000-00-00'),
+(2, 313839, '2018-05-29', '2018-05-24');
 
 -- --------------------------------------------------------
 
