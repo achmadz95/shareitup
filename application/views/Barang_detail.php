@@ -8,6 +8,8 @@
 		<meta name="description" content="">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 		
+		<!-- Compiled and minified Bootstrap CSS -->
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap/css/bootstrap.min.css">
 		<!-- bootstrap -->
 		<link href=<?php echo base_url()."assets/bootstrap/css/bootstrap.min.css"?> rel="stylesheet">      
 		<link href=<?php echo base_url()."assets/bootstrap/css/bootstrap-responsive.min.css"?> rel="stylesheet">		
@@ -69,11 +71,14 @@
 					<img src="<?php echo base_url('assets/img/logo.png'); ?> " style="width: 11%; height: 100%; margin-left:-10px;"/>
 					<nav id="menu" class="pull-right">
 						<ul>
-								<li><a href="<?php echo base_url("Home")?>">Home</a>					
+							<li>
+								<a href="<?php echo base_url("Home")?>">Home</a>					
 							</li>															
-							<li><a href="<?php echo base_url("Profile")?>">Profil</a>
+							<li>
+								<a href="<?php echo base_url("Profile")?>">Profil</a>
 							</li>
-							<li><a href="<?php echo base_url("Kelola_barang")?>">Barang</a>
+							<li>
+								<a href="<?php echo base_url("Kelola_barang")?>">Barang</a>
 							</li>
 						</ul>
 					</nav>
@@ -88,11 +93,50 @@
 				<div class="row">						
 					<div class="span9">
 						<div class="row">
-							<div class="span4">
-								<a href="<?php echo base_url().$x['foto_barang'] ?>" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="<?php echo base_url().$x['foto_barang'] ?>"></a>	
+							<!-- <div class="span4" data-jcarousel="true">
+								<a href="<?php echo base_url().$x['foto_barang'] ?>" data-colorbox-href="<?php echo base_url().$x['foto_barang'] ?>" class="thumbnail" data-fancybox-group="group1" title="Description 1" onclick="return false;">
+									<img itemprop="image" alt="" src="<?php echo base_url().$x['foto_barang'] ?>" xpreview="<?php echo base_url().$x['foto_barang'] ?>"></a>
+							</div> -->
+
+							<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    							<!-- Indicators -->
+    							<ol class="carousel-indicators">
+        							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        							<li data-target="#myCarousel" data-slide-to="1"></li>
+        							<li data-target="#myCarousel" data-slide-to="2"></li>
+    							</ol>
+
+    							<!-- Wrapper for slides -->
+    							<div class="carousel-inner" style="margin-left: 40px">
+    								<?php if ($x['foto_barang2'|'foto_barang3']==NULL) {?>
+        								<div class="item active">
+            								<img src="<?php echo base_url().$x['foto_barang'] ?>" alt="">
+        								</div>
+        							<?php } else { ?>
+        								<div class="item active">
+            								<img src="<?php echo base_url().$x['foto_barang'] ?>" alt="">
+        								</div>
+        								<div class="item">
+            								<img src="<?php echo base_url().$x['foto_barang2'] ?>" alt="">
+        								</div>
+        								<div class="item">
+            								<img src="<?php echo base_url().$x['foto_barang3'] ?>" alt="">
+        								</div>
+        							<?php } } ?>
+    							</div>
+
+    							<!-- Controls -->
+							    <a style="margin-left: 20px" class="left carousel-control" href="#myCarousel" data-slide="prev">
+							        <span class="glyphicon glyphicon-chevron-left"></span>
+							        <img src="<?php echo base_url()."assets/img/prev.png" ?>"> </span> <!-- Gmbr Previous -->
+							    </a>
+							    <a style="margin-right: 520px"class="right carousel-control" href="#myCarousel" data-slide="next">
+							        <span class="glyphicon glyphicon-chevron-right"></span>
+							        <img src="<?php echo base_url()."assets/img/next.png" ?>"> </span> <!-- Gmbr Next -->
+							    </a>
 							</div>
-							
-							<div class="span5">
+
+							<div class="span5" style="margin-left: 40px">
 								<address>
 									<strong>Nama Barang:</strong> <span><?php echo $x['nama_barang']; ?></span><br>
 									<strong>Jenis:</strong> <span><?php echo $x['jenis']; ?></span><br>
@@ -104,26 +148,29 @@
 							
 
 							<?php if ($this->session->userdata('id_user')==$x['id_pemilik']) {?>
-								<div class="span5">
+								<div class="span5" style="margin-left: 40px;margin-top: -15px">
 								<a class="btn btn-warning btn-sm" href="<?php echo base_url('EditBarang/Edit/'.$x['id_barang']) ?>">Edit barang</a> </div>
 							<?php } else { ?>	
-							<div class="span5">
+							<div class="span5" style="margin-left: 40px">
 								<form class="form-inline" action="<?php echo base_url('Barang_detail/pinjam_barang'); ?>" method="post" enctype='multipart/form-data'>
 									<label class="checkbox">
 										<input type="hidden" value="<?php echo $x['id_barang']; ?>" name='id_barang'>
-										<p>Pilih tanggal pengembalian</p>
-									  	<input type="date" value="" name="date"> 
-									  	<p>Harga DP Pinjam Barang</p>
-									  	<input type="number" value="<?php echo $x['pinjam_dp_barang']; ?>" name="dp" readonly>  
+										<p><label for="date" class="control-label">Pilih tanggal pengembalian</p></label>
+									  	<div class="controls">
+									  		<input id="date" type="date" value="" name="date" required> 
+									  	</div>
+									  	<br>
+									  	<p><label for="dp" class="control-label">Harga DP Pinjam Barang</p>
+									  	<div class="controls">
+									  		<input id="dp" type="number" value="<?php echo $x['pinjam_dp_barang']; ?>" name="dp" readonly>
+									  	</div>  
 									  	<p>&nbsp;</p>
 									  	<button class="btn btn-inverse" type="submit">Pinjam</button>
 									</label>
-									<br/>
-									
-									
+									<br>
 								</form>
 							</div>	
-							<?php } } ?>		
+							<?php } ?>		
 
 
 						</div>
@@ -242,6 +289,13 @@
 				$('#myCarousel-2').carousel({
                     interval: 2500
                 });								
+			});
+		</script>
+		<script type="text/javascript">
+			$('.carousel').carousel({
+     			interval: 8000,
+     			pause:true,
+     			wrap:false
 			});
 		</script>
     </body>
